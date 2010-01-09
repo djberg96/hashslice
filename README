@@ -2,8 +2,7 @@
    Slicing for Ruby hashes.
 
 = Installation
-   rake test (optional)
-   rake install
+   gem install hashslice
 
 = Synopsis
    require 'hashslice'
@@ -36,7 +35,7 @@
    If there are more values than keys, the extra values are dropped.
 
 = Copyright
-   Copyright (c) 2001-2009, The FaerieMUD Consortium and Daniel J. Berger.
+   Copyright (c) 2001-2010, The FaerieMUD Consortium and Daniel J. Berger.
    All rights reserved.
 
 = License
