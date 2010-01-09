@@ -1,0 +1,27 @@
+== 1.0.7 - 27-Sep-2009
+* Fixed a packaging bug.
+* Minor updates to the gemspec.
+* Added the 'gem' Rakefile task.
+
+== 1.0.6 - 26-Aug-2009
+* Added the Hash#slice alias for Hash#[].
+* Added the Hash#hash_of method that returns a sub-hash.
+* Added test-unit 2.x as a development dependency.
+
+== 1.0.5 - 30-Jul-2009
+* Several updates to the gemspec, including a change in the license from
+  Artistic to Artistic 2.0.
+* Added the install_gem Rake task, and other minor refactorings to the
+  Rakefile.
+* Minor update to the test suite to make it Ruby 1.9.x compliant. The library
+  itself required no changes.
+
+== 1.0.4 - 22-May-2008
+* Library now managed by Daniel Berger with the kind permission of
+  the original author, Michael Granger.
+* Added gemspec, README, MANIFEST, and CHANGES files.
+* Added a Rakefile with tasks for testing and installation.
+* Replaced the test suite with one based on Test::Unit.
+
+== 1.0.3 - 9-Jun-2004
+* Last release by Michael Granger
