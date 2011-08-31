@@ -4,16 +4,19 @@ require 'rake/testtask'
 
 CLEAN.include("**/*.gem", "**/*.rbc")
 
-desc 'Build the hashslice gem'
-task :gem do
-  spec = eval(IO.read('hashslice.gemspec'))
-  Gem::Builder.new(spec).build
-end
+namespace :gem do
 
-desc "Install the hashslice library as a gem"
-task :install_gem => [:gem] do
-  file = Dir["*.gem"].first
-  sh "gem install #{file}"
+  desc 'Build the hashslice gem'
+  task :create => [:clean] do
+    spec = eval(IO.read('hashslice.gemspec'))
+    Gem::Builder.new(spec).build
+  end
+
+  desc "Install the hashslice library as a gem"
+  task :install => [:create] do
+    file = Dir["*.gem"].first
+    sh "gem install #{file}"
+  end
 end
 
 Rake::TestTask.new do |t|
