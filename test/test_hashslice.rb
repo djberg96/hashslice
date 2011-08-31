@@ -16,7 +16,7 @@ class TC_Hashslice < Test::Unit::TestCase
    end
 
    def test_version
-      assert_equal('1.0.7', Hash::VERSION_HASHSLICE)      
+      assert_equal('1.0.8', Hash::VERSION_HASHSLICE)      
    end
    
    def test_get_slice_instance_method_basic

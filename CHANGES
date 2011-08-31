@@ -1,3 +1,8 @@
+== 1.0.8 - 31-Aug-2011
+* Removed an old install task, updated the clean task and set a
+  default task in the Rakefile.
+* Minor updates to the gemspec.
+
 == 1.0.7 - 27-Sep-2009
 * Fixed a packaging bug.
 * Minor updates to the gemspec.
