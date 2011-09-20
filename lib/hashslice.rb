@@ -46,9 +46,9 @@ class Hash
     else
       values = args.pop # Last arg is the value. The rest are keys.
       values = [values] unless values.is_a?(Array)
-        args.each_index{ |i| hset(args[i], values[i]) }
-      end
-   end
+      args.each_index{ |i| hset(args[i], values[i]) }
+    end
+  end
 
   # Returns a sub-hash of the current hash.
   #
