@@ -2,7 +2,7 @@ require 'rubygems'
 
 Gem::Specification.new do |gem|
   gem.name      = 'hashslice'
-  gem.version   = '1.0.8'
+  gem.version   = '1.0.9'
   gem.authors   = ['Daniel J. Berger', 'Michael Granger']
   gem.license   = 'Artistic 2.0'
   gem.email     = 'djberg96@gmail.com'
@@ -14,7 +14,7 @@ Gem::Specification.new do |gem|
   gem.rubyforge_project = 'shards'
   gem.extra_rdoc_files = ['README', 'CHANGES', 'MANIFEST']
    
-  gem.add_development_dependency('test-unit', '>= 2.1.0')
+  gem.add_development_dependency('test-unit')
 
   gem.description = <<-EOF
     The hashslice library adds builtin hash slicing to Ruby's Hash class.

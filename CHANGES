@@ -1,3 +1,6 @@
+== 1.0.9 - 19-Sep-2011
+* Cosmetic updates to silence Ruby 1.9.x warnings.
+
 == 1.0.8 - 31-Aug-2011
 * Removed an old install task, updated the clean task and set a
   default task in the Rakefile.
