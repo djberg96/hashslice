@@ -1,3 +1,7 @@
+== 1.1.0 - 7-Dec-2015
+* This gem is now signed.
+* Updates to the gemspec and Rakefile.
+
 == 1.0.9 - 19-Sep-2011
 * Cosmetic updates to silence Ruby 1.9.x warnings.
 
