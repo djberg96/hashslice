@@ -5,10 +5,8 @@
 # via the 'rake test' task.
 #######################################################################
 require 'rubygems'
-gem 'test-unit'
-
 require 'hashslice'
-require 'test/unit'
+require 'test-unit'
 
 class TC_Hashslice < Test::Unit::TestCase
   def setup
@@ -16,7 +14,7 @@ class TC_Hashslice < Test::Unit::TestCase
   end
 
   def test_version
-    assert_equal('1.0.9', Hash::VERSION_HASHSLICE)      
+    assert_equal('1.1.0', Hash::VERSION_HASHSLICE)      
   end
    
   def test_get_slice_instance_method_basic
