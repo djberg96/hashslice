@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.summary    = "Adds hash slicing to Ruby's Hash class"
   gem.test_file  = 'test/test_hashslice.rb'
   gem.files      = Dir['**/*'].reject{ |f| f.include?('git') }
-  gem.cert_files = Dir['certs/*']
+  gem.cert_chain = Dir['certs/*']
 
   gem.extra_rdoc_files = ['README', 'CHANGES', 'MANIFEST']
    
