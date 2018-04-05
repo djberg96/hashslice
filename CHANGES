@@ -1,3 +1,8 @@
+== 1.1.1 - 5-Apr-2018
+* Fixed deprecation warnings for Ruby 2.4 and later.
+* The VERSION_HASHSLICE constant is now frozen.
+* Updated the cert.
+
 == 1.1.0 - 7-Dec-2015
 * This gem is now signed.
 * Updates to the gemspec and Rakefile.
