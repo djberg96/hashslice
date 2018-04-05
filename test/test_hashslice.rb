@@ -14,9 +14,9 @@ class TC_Hashslice < Test::Unit::TestCase
   end
 
   def test_version
-    assert_equal('1.1.0', Hash::VERSION_HASHSLICE)      
+    assert_equal('1.1.0', Hash::VERSION_HASHSLICE)
   end
-   
+
   def test_get_slice_instance_method_basic
     assert_respond_to(@hash, :[])
     assert_nothing_raised{ @hash['a'] }
@@ -42,9 +42,9 @@ class TC_Hashslice < Test::Unit::TestCase
     assert_nothing_raised{ @hash['a'] = 3 }
     assert_nothing_raised{ @hash['a', 'b'] = 3 }
     assert_nothing_raised{ @hash['a', 'b'] = 3, 4 }
-    assert_kind_of(Fixnum, @hash['a'] = 3)
-    assert_kind_of(Fixnum, @hash['a', 'b'] = 3)
-    assert_kind_of(Fixnum, @hash['a', 'b'] = 3, 4)
+    assert_kind_of(Integer, @hash['a'] = 3)
+    assert_kind_of(Integer, @hash['a', 'b'] = 3)
+    assert_kind_of(Integer, @hash['a', 'b'] = 3, 4)
   end
 
   # hash[key] = value
@@ -81,10 +81,10 @@ class TC_Hashslice < Test::Unit::TestCase
   def test_slice_alias
     assert_true(Hash.instance_method(:slice) == Hash.instance_method(:[]))
   end
-   
+
   def test_hash_of
     assert_respond_to(@hash, :hash_of)
-    assert_equal({'a' => 1, 'b' => 2}, @hash.hash_of('a', 'b'))      
+    assert_equal({'a' => 1, 'b' => 2}, @hash.hash_of('a', 'b'))
   end
 
   def teardown
