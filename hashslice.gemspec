@@ -2,7 +2,7 @@ require 'rubygems'
 
 Gem::Specification.new do |gem|
   gem.name       = 'hashslice'
-  gem.version    = '1.1.0'
+  gem.version    = '1.1.1'
   gem.authors    = ['Daniel J. Berger', 'Michael Granger']
   gem.license    = 'Artistic 2.0'
   gem.email      = 'djberg96@gmail.com'
