@@ -1,3 +1,8 @@
+== 1.1.2 - 14-Jul-2020
+* Fix the license name in the gemspec (missing hyphen).
+* Add an explicit .rdoc extension to the README, MANIFEST and CHANGES files.
+* Added a loose dependency (version 3+) to the test-unit development dependency.
+
 == 1.1.1 - 5-Apr-2018
 * Fixed deprecation warnings for Ruby 2.4 and later.
 * The VERSION_HASHSLICE constant is now frozen.

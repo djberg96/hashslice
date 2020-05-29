@@ -1,6 +1,6 @@
-* CHANGES
-* MANIFEST
-* README
+* CHANGES.rdoc
+* MANIFEST.rdoc
+* README.rdoc
 * Rakefile
 * hashslice.gemspec
 * certs/djberg96_pub.pem
