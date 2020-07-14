@@ -22,7 +22,14 @@ class Hash
     end
   end
 
-  alias slice []
+  # Temporarily silence redefinition warning.
+  begin
+    old_verbose = $VERBOSE
+    $VERBOSE = false
+    alias slice []
+  ensure
+    $VERBOSE = old_verbose
+  end
 
   # Hash slice assignment. You can assign a list of values to a list of keys
   # in a single operation on a one for one basis.
