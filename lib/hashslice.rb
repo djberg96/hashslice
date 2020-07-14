@@ -3,7 +3,7 @@ class Hash
   alias hset []=
 
   # The version of the hashslice library
-  VERSION_HASHSLICE = '1.1.1'.freeze
+  VERSION_HASHSLICE = '1.1.2'.freeze
 
   # Retrieve a hash slice. If a single key is provided, returns a single
   # value. If multiple keys are provided, an array of values is returned.

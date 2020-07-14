@@ -14,7 +14,7 @@ class TC_Hashslice < Test::Unit::TestCase
   end
 
   def test_version
-    assert_equal('1.1.1', Hash::VERSION_HASHSLICE)
+    assert_equal('1.1.2', Hash::VERSION_HASHSLICE)
     assert_true(Hash::VERSION_HASHSLICE.frozen?)
   end
 
