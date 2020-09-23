@@ -17,27 +17,30 @@ RSpec.describe Hash do
     expect(Hash::VERSION_HASHSLICE).to be_frozen
   end
 
-=begin
-  example "get_slice_instance_method_basic" do
+  example "Hash#[] basic functionality" do
     expect(@hash).to respond_to(:[])
-    expect{ @hash['a'] }.not_to raise_error
-    expect{ @hash['a', 'b'] }.not_to raise_error
-    expect( @hash['a']).to be_kind_of(Integer)
-    expect( 'b']).to be_kind_of(Array, @hash['a')
+    expect{ @hash[] }.not_to raise_error
   end
 
-  example "get_slice_instance_method" do
-    expect( @hash['a']).to eq(1)
-    expect( 'b']).to eq([1, 2], @hash['a')
-    expect( 'c']).to eq([1, 2, nil], @hash['a', 'b')
-    expect(@hash['bogus']).to be_nil
+  example "Hash#[] returns the expected value for a single argument" do
+    expect(@hash['a']).to eq(1)
+    expect(@hash['b']).to eq(2)
+    expect(@hash['c']).to eq(nil)
   end
 
-  example "get_slice_duplicate_keys" do
-    expect( 'a']).to eq([1, 1], @hash['a')
-    expect( 'b']).to eq([1, 2, 1, 2], @hash['a', 'b', 'a')
+  example "Hash#[] returns the expected value for multiple arguments" do
+    expect(@hash['a', 'b']).to eq([1, 2])
+    expect(@hash['b', 'a']).to eq([2, 1])
+    expect(@hash['a', 'b', 'c']).to eq([1, 2, nil])
   end
 
+  example "Hash#[] returns the expected value for duplicate arguments" do
+    expect(@hash['a', 'a']).to eq([1, 1])
+    expect(@hash['a', 'b', 'a', 'b']).to eq([1, 2, 1, 2])
+    expect(@hash['a', 'a', 'c', 'c']).to eq([1, 1, nil, nil])
+  end
+
+=begin
   example "set_slice_instance_method_basic" do
     expect(@hash).to respond_to(:[]=)
     expect{ @hash['a'] = 3 }.not_to raise_error
