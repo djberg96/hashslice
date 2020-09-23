@@ -1,8 +1,9 @@
 * CHANGES.rdoc
 * MANIFEST.rdoc
 * README.rdoc
+* Gemfile
 * Rakefile
 * hashslice.gemspec
 * certs/djberg96_pub.pem
 * lib/hashslice.rb
-* test/test_hashslice.rb
+* spec/hashslice_spec.rb
