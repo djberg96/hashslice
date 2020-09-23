@@ -16,6 +16,15 @@ Gem::Specification.new do |gem|
    
   gem.add_development_dependency('rspec', '~> 3.9')
 
+  spec.metadata = {
+    'homepage_uri'      => 'https://github.com/djberg96/hashslice',
+    'bug_tracker_uri'   => 'https://github.com/djberg96/hashslice/issues',
+    'changelog_uri'     => 'https://github.com/djberg96/hashslice/blob/master/CHANGES',
+    'documentation_uri' => 'https://github.com/djberg96/hashslice/wiki',
+    'source_code_uri'   => 'https://github.com/djberg96/hashslice',
+    'wiki_uri'          => 'https://github.com/djberg96/hashslice/wiki'
+  }
+
   gem.description = <<-EOF
     The hashslice library adds builtin hash slicing to Ruby's Hash class.
     This lets you reference, or assign to, multiple hash keys simultaneously
