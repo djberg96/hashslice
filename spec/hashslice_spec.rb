@@ -40,55 +40,41 @@ RSpec.describe Hash do
     expect(@hash['a', 'a', 'c', 'c']).to eq([1, 1, nil, nil])
   end
 
-=begin
-  example "set_slice_instance_method_basic" do
+  example "Hash#[]= basic functionality" do
     expect(@hash).to respond_to(:[]=)
     expect{ @hash['a'] = 3 }.not_to raise_error
     expect{ @hash['a', 'b'] = 3 }.not_to raise_error
-    expect{ @hash['a', 'b'] = 3, 4 }.not_to raise_error
-    expect( @hash['a'] = 3).to be_kind_of(Integer)
-    expect( 'b'] = 3).to be_kind_of(Integer, @hash['a')
-    expect( 4).to be_kind_of(Integer, @hash['a', 'b'] = 3)
+    expect{ @hash['a', 'b'] = [3, 4] }.not_to raise_error
   end
 
-  # hash[key] = value
-  example "set_slice_instance_method_single_key_and_value" do
-    expect{ @hash['a'] = 3 }.not_to raise_error
-    expect{ @hash['b'] = [1, 2] }.not_to raise_error
-    expect( @hash).to eq({'a' => 3, 'b' => [1, 2]})
+  example "Hash#[]= with a single key and single value works as expected" do
+    expect(@hash['a'] = 3).to eq(3)
+    expect(@hash['a']).to eq(3)
+    expect(@hash['b'] = [4, 5]).to eq([4, 5])
+    expect(@hash['b']).to eq([4, 5])
   end
 
-  # hash[key1, key2] = value
-  example "set_slice_instance_method_multiple_keys_single_value" do
-    expect{ @hash['a', 'b'] = 3 }.not_to raise_error
-    expect( @hash).to eq({'a' => 3, 'b' => nil})
+  example "Hash#[]= with a multiple keys and single value works as expected" do
+    expect(@hash['a', 'b'] = 3).to eq(3)
+    expect(@hash['a', 'b']).to eq([3, nil])
   end
 
-  # hash[key1, key2] = value1, value2
-  example "set_slice_instance_method_multiple_keys_multiple_values" do
-    expect{ @hash['a', 'b'] = 3, 4 }.not_to raise_error
-    expect( @hash).to eq({'a' => 3, 'b' => 4})
+  example "Hash#[]= with a multiple keys and multiple values works as expected" do
+    expect(@hash['a', 'b'] = [3, 4]).to eq([3, 4])
+    expect(@hash['a', 'b']).to eq([3, 4])
   end
 
-  # hash[key] = value1, value2
-  example "set_slice_instance_method_single_key_multiple_values" do
-    expect{ @hash['a'] = 3, 4 }.not_to raise_error
-    expect( @hash).to eq({'a' => [3, 4], 'b' => 2})
-  end
-
-  # hash[key1, key2] = value1, value2, value3
-  example "set_slice_instance_method_multiple_keys_odd_values" do
+  example "Hash#[]= with a multiple keys and an odd number of values works as expected" do
     expect{ @hash['a', 'b'] = 3, 4, 5 }.not_to raise_error
-    expect( @hash).to eq({'a' => 3, 'b' => 4})
+    expect(@hash).to eq({'a' => 3, 'b' => 4})
   end
 
   example "slice_alias" do
-    expect(Hash.instance_method(:slice) == Hash.instance_method(:[])).to be true
+    expect(Hash.instance_method(:slice)).to eql(Hash.instance_method(:[]))
   end
 
-  example "hash_of" do
+  example "hash_of returns a sub hash" do
     expect(@hash).to respond_to(:hash_of)
-    expect( 'b')).to eq({'a' => 1, 'b' => 2}, @hash.hash_of('a')
+    expect(@hash.hash_of('a', 'b')).to eq({'a' => 1, 'b' => 2})
   end
-=end
 end
