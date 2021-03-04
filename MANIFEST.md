@@ -1,6 +1,6 @@
-* CHANGES.rdoc
-* MANIFEST.rdoc
-* README.rdoc
+* CHANGES.md
+* MANIFEST.md
+* README.md
 * Gemfile
 * Rakefile
 * hashslice.gemspec
