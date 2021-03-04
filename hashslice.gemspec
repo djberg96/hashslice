@@ -12,8 +12,7 @@ Gem::Specification.new do |spec|
   spec.files      = Dir['**/*'].reject{ |f| f.include?('git') }
   spec.cert_chain = Dir['certs/*']
 
-  spec.extra_rdoc_files = ['README.rdoc', 'CHANGES.rdoc', 'MANIFEST.rdoc']
-   
+  spec.add_development_dependency('rake')
   spec.add_development_dependency('rspec', '~> 3.9')
 
   spec.metadata = {
