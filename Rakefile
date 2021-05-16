@@ -8,7 +8,7 @@ namespace :gem do
   desc 'Build the hashslice gem'
   task :create => [:clean] do
     require 'rubygems/package'
-    spec = eval(IO.read('hashslice.gemspec'))
+    spec = Gem::Specification.load('hashslice.gemspec')
     spec.signing_key = File.join(Dir.home, '.ssh', 'gem-private_key.pem')
     Gem::Package.build(spec)
   end
