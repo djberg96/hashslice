@@ -4,6 +4,9 @@ Slicing for Ruby hashes.
 ## Installation
 `gem install hashslice`
 
+## Adding the trusted cert
+`gem cert --add <(curl -Ls https://raw.githubusercontent.com/djberg96/hashslice/main/certs/djberg96_pub.pem)`
+
 ## Synopsis
 ```ruby
 require 'hashslice'
