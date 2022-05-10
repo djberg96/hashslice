@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 # Reopen the core Hash class and redefine the [] and []= methods.
 class Hash
   alias href []
   alias hset []=
 
   # The version of the hashslice library
-  VERSION_HASHSLICE = '1.2.0'.freeze
+  VERSION_HASHSLICE = '1.2.0'
 
   # Retrieve a hash slice. If a single key is provided, returns a single
   # value. If multiple keys are provided, an array of values is returned.
