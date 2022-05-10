@@ -25,7 +25,7 @@ RSpec.describe Hash do
   example "Hash#[] returns the expected value for a single argument" do
     expect(@hash['a']).to eq(1)
     expect(@hash['b']).to eq(2)
-    expect(@hash['c']).to eq(nil)
+    expect(@hash['c']).to be(nil)
   end
 
   example "Hash#[] returns the expected value for multiple arguments" do

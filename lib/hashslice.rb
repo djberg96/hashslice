@@ -1,3 +1,4 @@
+# Reopen the core Hash class and redefine the [] and []= methods.
 class Hash
   alias href []
   alias hset []=
