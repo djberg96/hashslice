@@ -70,7 +70,7 @@ RSpec.describe Hash do
   end
 
   example 'slice_alias' do
-    expect(Hash.instance_method(:slice)).to eql(Hash.instance_method(:[]))
+    expect(described_class.instance_method(:slice)).to eql(described_class.instance_method(:[]))
   end
 
   example 'hash_of returns a sub hash' do
