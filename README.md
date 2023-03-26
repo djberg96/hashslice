@@ -1,3 +1,5 @@
+[![Ruby](https://github.com/djberg96/hashslice/actions/workflows/ruby.yml/badge.svg)](https://github.com/djberg96/hashslice/actions/workflows/ruby.yml)
+
 ## Description
 Slicing for Ruby hashes.
 
@@ -40,7 +42,7 @@ The values on the right are assigned to the keys on left on a one for one
 If there are more values than keys, the extra values are dropped.
 
 ## Copyright
-Copyright (c) 2001-2020, The FaerieMUD Consortium and Daniel J. Berger.
+Copyright (c) 2001-2023, The FaerieMUD Consortium and Daniel J. Berger.
 All rights reserved.
 
 ## License
