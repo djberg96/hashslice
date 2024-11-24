@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
     'documentation_uri'     => 'https://github.com/djberg96/hashslice/wiki',
     'source_code_uri'       => 'https://github.com/djberg96/hashslice',
     'wiki_uri'              => 'https://github.com/djberg96/hashslice/wiki',
-    'rubygems_mfa_required' => 'true'
+    'rubygems_mfa_required' => 'true',
     'github_com'            => 'https://github.com/djberg96/hashslice',
     'funding_uri'           => 'https://github.com/sponsors/djberg96'
   }
