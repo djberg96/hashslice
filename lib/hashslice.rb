@@ -11,18 +11,19 @@ class Hash
   # Retrieve a hash slice. If a single key is provided, returns a single
   # value. If multiple keys are provided, an array of values is returned.
   #
+  # @param args [Array] The keys to retrieve values for
+  # @return [Object, Array] Single value for one key, array of values for multiple keys
+  #
   # Examples:
   #
   #     hash = {'a' => 1, 'b' => 2, 'c' => 3}
   #     hash['a']       -> 1
   #     hash['a', 'c']  -> [1, 3]
   #
-  def [](*args)
-    if args.length == 1
-      href(args[0])
-    else
-      args.map{ |k| href(k) }
-    end
+  def [](*keys)
+    return href(keys.first) if keys.length == 1
+
+    keys.map { |key| href(key) }
   end
 
   # Temporarily silence redefinition warning.
@@ -43,6 +44,9 @@ class Hash
   # If the number of values exceeds the number of keys, the extra values are
   # dropped.
   #
+  # @param args [Array] Keys followed by values (last argument contains the values)
+  # @return [Object, Array] The assigned value(s)
+  #
   # Examples:
   #
   #     hash['a'] = 1, 2          -> {a => [1, 2]}
@@ -51,25 +55,27 @@ class Hash
   #     hash['a', 'b'] = 3, 4, 5  -> {a => 3, b => 4}
   #
   def []=(*args)
-    if args.length <= 2
-      hset(*args)
-    else
-      values = args.pop # Last arg is the value. The rest are keys.
-      values = [values] unless values.is_a?(Array)
-      args.each_index{ |i| hset(args[i], values[i]) }
-    end
+    return hset(*args) if args.length <= 2
+
+    *keys, values = args
+    values = Array(values) unless values.is_a?(Array)
+
+    keys.each_with_index { |key, index| hset(key, values[index]) }
+
+    values
   end
 
   # Returns a sub-hash of the current hash.
+  #
+  # @param keys [Array] The keys to include in the sub-hash
+  # @return [Hash] A new hash containing only the specified keys and their values
   #
   # Example:
   #
   #    hash = {'a' => 1, 'b' => 2, 'c' => 3}
   #    hash.hash_of('a', 'b') -> {'a' => 1, 'b' => 2}
   #
-  def hash_of(*args)
-    temp = {}
-    args.map{ |k| temp[k] = href(k) }
-    temp
+  def hash_of(*keys)
+    keys.each_with_object({}) { |key, result| result[key] = href(key) }
   end
 end
